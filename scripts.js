@@ -19,10 +19,22 @@ const game = new Chess(); // Crea una nuova partita con chess.js
 let selectedSquare = null;
 
 function renderBoard() {
+
     boardElement.innerHTML = ''; // Pulisci la scacchiera
 
-const boardFen = game.fen().split(' ')[0];
-const squares = game.fen().split(' ')[0].split('/').reverse().map(row => row.split(''));
+    const boardFen = game.fen().split(' ')[0];
+    const rows = boardFen.split('/');
+    const squares = rows.reverse().map(row => {
+        let expandedRow = '';
+        for (let char of row) {
+            if (isNaN(char)) {
+                expandedRow += char;
+            } else {
+                expandedRow += '-'.repeat(Number(char));
+            }
+        }
+        return expandedRow.split('');
+    });
 
 
 
