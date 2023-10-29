@@ -45,7 +45,9 @@ function renderBoard() {
 }
 
 boardElement.addEventListener('click', e => {
-    const clickedSquare = e.target.closest('.square').dataset.square;
+    const closestSquare = e.target.closest('.square');
+    if (!closestSquare) return; // se non c'è un elemento .square, esce dalla funzione
+    const clickedSquare = closestSquare.dataset.square;
     const clickedPiece = game.get(clickedSquare);
 
     if (selectedSquare) {
@@ -61,5 +63,6 @@ boardElement.addEventListener('click', e => {
         selectedSquare = clickedSquare; // Seleziona il pezzo se è valido
     }
 });
+
 
 renderBoard(); // Inizializza la scacchiera
