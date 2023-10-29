@@ -1,32 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scacchi</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Scacchiera</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="scacchiera">
-    <div class="bianco" data-fila="0" data-colonna="0"></div>
-    <div class="nero" data-fila="0" data-colonna="1"></div>
-    <div class="bianco" data-fila="0" data-colonna="2"></div>
-    <div class="nero" data-fila="0" data-colonna="3"></div>
-    <div class="bianco" data-fila="0" data-colonna="4"></div>
-    <div class="nero" data-fila="0" data-colonna="5"></div>
-    <div class="bianco" data-fila="0" data-colonna="6"></div>
-    <div class="nero" data-fila="0" data-colonna="7"></div>
-    <div class="nero" data-fila="1" data-colonna="0"></div>
-    <div class="bianco" data-fila="1" data-colonna="1"></div>
-    <div class="nero" data-fila="1" data-colonna="2"></div>
-    <div class="bianco" data-fila="1" data-colonna="3"></div>
-    <div class="nero" data-fila="1" data-colonna="4"></div>
-    <div class="bianco" data-fila="1" data-colonna="5"></div>
-    <div class="nero" data-fila="1" data-colonna="6"></div>
-    <div class="bianco" data-fila="1" data-colonna="7"></div>
-    <!-- Continua con le altre righe e colonne -->
-</div>
-    <script src="chess.js"></script>
-    <script src="script.js"></script>
+    <div class="board">
+        <!-- La scacchiera verrà generata dinamicamente da JavaScript -->
+    </div>
+
+    <!-- Inclusione di chess.js via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.2/chess.js"></script>
+    <!-- Il tuo script per generare e interagire con la scacchiera -->
+    <script src="scripts.js"></script>
 </body>
 </html>

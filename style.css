@@ -1,39 +1,43 @@
-/* Stile per la pagina */
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 0;
-}
-
-/* Stile per la scacchiera */
-.scacchiera {
+.board {
     display: grid;
-    grid-template-columns: repeat(8, 50px);
-    grid-template-rows: repeat(8, 50px);
-    gap: 2px;
-    margin: 20px auto;
-    width: 400px;
-    height: 400px;
+    grid-template-columns: repeat(8, 1fr);
+    width: 320px;
+    height: 320px;
+    border: 1px solid #000;
 }
 
-.scacchiera div {
-    width: 50px;
-    height: 50px;
+.square {
+    width: 40px;
+    height: 40px;
+    transition: all 0.3s ease;
+}
+
+.white {
+    background-color: #EDEDED;
+}
+
+.black {
+    background-color: #333;
+}
+
+.piece {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 24px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
 
-/* Stile per le caselle bianche */
-.bianco {
-    background-color: #fff;
+.dragging {
+    opacity: 0.5;
 }
 
-/* Stile per le caselle nere */
-.nero {
-    background-color: #000;
-    color: #fff;
+.selected {
+    border: 2px solid #FFD700; /* colore oro per evidenziare */
+}
+
+.possible-move {
+    background-color: rgba(255, 215, 0, 0.4); /* semi-trasparente oro */
 }
