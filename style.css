@@ -1,0 +1,39 @@
+/* Stile per la pagina */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Stile per la scacchiera */
+.scacchiera {
+    display: grid;
+    grid-template-columns: repeat(8, 50px);
+    grid-template-rows: repeat(8, 50px);
+    gap: 2px;
+    margin: 20px auto;
+    width: 400px;
+    height: 400px;
+}
+
+.scacchiera div {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+/* Stile per le caselle bianche */
+.bianco {
+    background-color: #fff;
+}
+
+/* Stile per le caselle nere */
+.nero {
+    background-color: #000;
+    color: #fff;
+}
