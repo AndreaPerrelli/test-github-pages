@@ -1,16 +1,16 @@
 const pieces = {
-    'p': '♟',
-    'r': '♜',
-    'n': '♞',
-    'b': '♝',
-    'q': '♛',
     'k': '♚',
-    'P': '♙',
-    'R': '♖',
-    'N': '♘',
-    'B': '♗',
+    'q': '♛',
+    'r': '♜',
+    'b': '♝',
+    'n': '♞',
+    'p': '♟',
+    'K': '♔',
     'Q': '♕',
-    'K': '♔'
+    'R': '♖',
+    'B': '♗',
+    'N': '♘',
+    'P': '♙'
 };
 
 
@@ -21,7 +21,11 @@ let selectedSquare = null;
 function renderBoard() {
     boardElement.innerHTML = ''; // Pulisci la scacchiera
 
-    const squares = game.fen().split(' ')[0].split('/').reverse().join('/').split('/').map(row => row.split(''));
+const boardFen = game.fen().split(' ')[0];
+const squares = boardFen.split('/').map(row => {
+    return row.replace(/\d/g, (digit) => '-'.repeat(digit));
+}).reverse();
+
 
     squares.forEach((row, rowIndex) => {
         row.forEach((piece, colIndex) => {
