@@ -22,9 +22,8 @@ function renderBoard() {
     boardElement.innerHTML = ''; // Pulisci la scacchiera
 
 const boardFen = game.fen().split(' ')[0];
-const squares = boardFen.split('/').map(row => {
-    return row.replace(/\d/g, (digit) => '-'.repeat(digit));
-}).reverse();
+const squares = game.fen().split(' ')[0].split('/').reverse().map(row => row.split(''));
+
 
 
     squares.forEach((row, rowIndex) => {
