@@ -1,3 +1,19 @@
+const pieces = {
+    'p': '♟',
+    'r': '♜',
+    'n': '♞',
+    'b': '♝',
+    'q': '♛',
+    'k': '♚',
+    'P': '♙',
+    'R': '♖',
+    'N': '♘',
+    'B': '♗',
+    'Q': '♕',
+    'K': '♔'
+};
+
+
 const boardElement = document.querySelector('.board');
 const game = new Chess(); // Crea una nuova partita con chess.js
 let selectedSquare = null;
